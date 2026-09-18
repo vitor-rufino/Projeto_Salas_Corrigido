@@ -144,6 +144,7 @@ if pagina == "Início":
         st.info("Use o menu lateral para cadastrar salas, professores, gerenciar reservas e analisar solicitações.")
 
 
+
 # -------------------------
 # SALAS
 # -------------------------
@@ -229,6 +230,7 @@ elif pagina == "Salas":
                     st.rerun()
 
 
+
 # -------------------------
 # PROFESSORES
 # -------------------------
@@ -307,6 +309,7 @@ elif pagina == "Professores":
                     conexao.commit()
                     st.success("Professor excluído com sucesso!")
                     st.rerun()
+
 
 
 # -------------------------
@@ -419,6 +422,7 @@ elif pagina == "Reservas":
                         conexao.commit()
                     st.success("Reserva cancelada com sucesso!")
                     st.rerun()
+
 
 
 # -------------------------
