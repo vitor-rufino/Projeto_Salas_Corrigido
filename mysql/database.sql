@@ -52,4 +52,5 @@ CREATE TABLE reservas (
 
     FOREIGN KEY (sala_id)
         REFERENCES salas(id)
+
 );
