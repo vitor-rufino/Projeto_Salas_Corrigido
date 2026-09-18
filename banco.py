@@ -1,8 +1,10 @@
 from pathlib import Path
 import sqlite3
 
+
 BASE_DIR = Path(__file__).resolve().parent
 DB_PATH = BASE_DIR / "reservas.db"
+
 
 
 def conectar():
@@ -57,6 +59,7 @@ def criar_banco():
             )
         """)
         conexao.commit()
+
 
 
 def criar_usuarios_iniciais():
