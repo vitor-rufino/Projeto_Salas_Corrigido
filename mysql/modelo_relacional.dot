@@ -1,0 +1,10 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="white", nodesep=0.7, ranksep=1.1];
+  node [shape=plain, fontname="Arial"];
+  usuarios [label=< <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0"><TR><TD BGCOLOR="#e85a32"><FONT COLOR="white"><B>usuarios</B></FONT></TD></TR><TR><TD ALIGN="LEFT">🔑 id INT UNSIGNED</TD></TR><TR><TD ALIGN="LEFT">nome VARCHAR(120)</TD></TR><TR><TD ALIGN="LEFT">email VARCHAR(160) UNIQUE</TD></TR><TR><TD ALIGN="LEFT">senha VARCHAR(255)</TD></TR><TR><TD ALIGN="LEFT">tipo ENUM</TD></TR></TABLE>>];
+  professores [label=< <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0"><TR><TD BGCOLOR="#e85a32"><FONT COLOR="white"><B>professores</B></FONT></TD></TR><TR><TD ALIGN="LEFT">🔑 id INT UNSIGNED</TD></TR><TR><TD ALIGN="LEFT">nome VARCHAR(120)</TD></TR><TR><TD ALIGN="LEFT">email VARCHAR(160) UNIQUE</TD></TR><TR><TD ALIGN="LEFT">departamento VARCHAR(160)</TD></TR></TABLE>>];
+  salas [label=< <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0"><TR><TD BGCOLOR="#e85a32"><FONT COLOR="white"><B>salas</B></FONT></TD></TR><TR><TD ALIGN="LEFT">🔑 id INT UNSIGNED</TD></TR><TR><TD ALIGN="LEFT">nome VARCHAR(120) UNIQUE</TD></TR><TR><TD ALIGN="LEFT">capacidade INT</TD></TR><TR><TD ALIGN="LEFT">localizacao VARCHAR(160)</TD></TR><TR><TD ALIGN="LEFT">projetor ENUM</TD></TR><TR><TD ALIGN="LEFT">computadores INT</TD></TR><TR><TD ALIGN="LEFT">status ENUM</TD></TR></TABLE>>];
+  reservas [label=< <TABLE BORDER="1" CELLBORDER="1" CELLSPACING="0"><TR><TD BGCOLOR="#e85a32"><FONT COLOR="white"><B>reservas</B></FONT></TD></TR><TR><TD ALIGN="LEFT">🔑 id INT UNSIGNED</TD></TR><TR><TD ALIGN="LEFT">professor_id INT FK</TD></TR><TR><TD ALIGN="LEFT">sala_id INT FK</TD></TR><TR><TD ALIGN="LEFT">data DATE</TD></TR><TR><TD ALIGN="LEFT">horario_inicio TIME</TD></TR><TR><TD ALIGN="LEFT">horario_fim TIME</TD></TR><TR><TD ALIGN="LEFT">finalidade VARCHAR(500)</TD></TR><TR><TD ALIGN="LEFT">status ENUM</TD></TR></TABLE>>];
+  professores -> reservas [dir=both, arrowtail=teetee, arrowhead=crow, label=" 1:N "];
+  salas -> reservas [dir=both, arrowtail=teetee, arrowhead=crow, label=" 1:N "];
+}

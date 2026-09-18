@@ -1,0 +1,36 @@
+erDiagram
+    PROFESSORES ||--o{ RESERVAS : "faz"
+    SALAS ||--o{ RESERVAS : "recebe"
+
+    USUARIOS {
+        INT id PK
+        VARCHAR nome
+        VARCHAR email UK
+        VARCHAR senha
+        ENUM tipo
+    }
+    PROFESSORES {
+        INT id PK
+        VARCHAR nome
+        VARCHAR email UK
+        VARCHAR departamento
+    }
+    SALAS {
+        INT id PK
+        VARCHAR nome UK
+        INT capacidade
+        VARCHAR localizacao
+        ENUM projetor
+        INT computadores
+        ENUM status
+    }
+    RESERVAS {
+        INT id PK
+        INT professor_id FK
+        INT sala_id FK
+        DATE data
+        TIME horario_inicio
+        TIME horario_fim
+        VARCHAR finalidade
+        ENUM status
+    }
