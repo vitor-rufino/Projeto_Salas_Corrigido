@@ -29,6 +29,7 @@ st.session_state.setdefault("usuario_nome", "")
 st.session_state.setdefault("usuario_tipo", "")
 
 
+
 # -------------------------
 # LOGIN
 # -------------------------
@@ -65,6 +66,7 @@ if not st.session_state.logado:
     st.stop()
 
 
+
 # -------------------------
 # CABEÇALHO / MENU
 # -------------------------
@@ -86,6 +88,7 @@ st.sidebar.divider()
 if st.sidebar.button("🚪 Sair", use_container_width=True, key="btn_sair"):
     limpar_login()
     st.rerun()
+
 
 
 # -------------------------
